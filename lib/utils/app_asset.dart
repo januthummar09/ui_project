@@ -17,9 +17,13 @@ class AppAsset {
   static String music8 = "${imageBase}music8.png";
   static String music9 = "${imageBase}music9.png";
   static String music10 = "${imageBase}music10.png";
+  static String gazalImage = "${imageBase}gazal.png";
+  static String gazal2Image = "${imageBase}gazal2.png";
 
   ///   IconBase
   static String searchIcon = "${iconBase}searchIcon.png";
   static String whatsappIcon = "${iconBase}whatsapp.png";
   static String playIcon = "${iconBase}play.png";
+  static String radioIcon = "${iconBase}radio.png";
+  static String rightIcon = "${iconBase}right_icon.png";
 }

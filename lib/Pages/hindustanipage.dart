@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ui_project/Widgets/radio_contain.dart';
+import 'package:ui_project/Widgets/search_bar.dart';
+import 'package:ui_project/Widgets/time_of_the_day.dart';
 
+import '../Widgets/insrumentalists_contain.dart';
+import '../play_screens/collection_screen.dart';
 import '../play_screens/popular_raga_screen.dart';
 import '../utils/app_asset.dart';
 
@@ -101,240 +106,108 @@ class _HindustaniPageState extends State<HindustaniPage> {
         "title": "Sarod",
         'images': AppAsset.music6,
         'color': const Color(0xFF4f4248),
+        "gazal": AppAsset.gazalImage,
+        "gazal2": AppAsset.gazal2Image,
       },
       {
         "title": "Violin",
-        'images': AppAsset.music6,
+        'images': AppAsset.music2,
         'color': const Color(0xFF4d023f),
+        "gazal": AppAsset.gazalImage,
+        "gazal2": AppAsset.gazal2Image,
       },
       {
         "title": "Sitar",
-        'images': AppAsset.music6,
+        'images': AppAsset.music3,
         'color': const Color(0xFF2b1e24),
+        "gazal": AppAsset.gazalImage,
+        "gazal2": AppAsset.gazal2Image,
       },
       {
         "title": "Flute",
-        'images': AppAsset.music6,
+        'images': AppAsset.music8,
         'color': const Color(0xFF153b0b),
+        "gazal": AppAsset.gazalImage,
+        "gazal2": AppAsset.gazal2Image,
       },
       {
         "title": "Plano",
-        'images': AppAsset.music6,
+        'images': AppAsset.music5,
         'color': const Color(0xFF4f4248),
+        "gazal": AppAsset.gazalImage,
+        "gazal2": AppAsset.gazal2Image,
       },
       {
         "title": "Jal Tarang",
-        'images': AppAsset.music6,
+        'images': AppAsset.music1,
         'color': const Color(0xFF4d023f),
+        "gazal": AppAsset.gazalImage,
+        "gazal2": AppAsset.gazal2Image,
       },
       {
         "title": "Shehnai",
-        'images': AppAsset.music6,
+        'images': AppAsset.music4,
         'color': const Color(0xFF2b1e24),
+        "gazal": AppAsset.gazalImage,
+        "gazal2": AppAsset.gazal2Image,
       },
       {
         "title": "Tabla",
-        'images': AppAsset.music6,
+        'images': AppAsset.music3,
         'color': const Color(0xFF153b0b),
+        "gazal": AppAsset.gazalImage,
+        "gazal2": AppAsset.gazal2Image,
       },
       {
         "title": "Santoor",
-        'images': AppAsset.music6,
+        'images': AppAsset.music2,
         'color': const Color(0xFF2b1e24),
+        "gazal": AppAsset.gazalImage,
+        "gazal2": AppAsset.gazal2Image,
       },
       {
         "title": "harmonium",
-        'images': AppAsset.music6,
+        'images': AppAsset.music7,
         'color': const Color(0xFF153b0b),
+        "gazal": AppAsset.gazalImage,
+        "gazal2": AppAsset.gazal2Image,
+      },
+    ],
+    "collection": [
+      {
+        'title': "Best of pt. Bhimsen josi",
+        'icon': AppAsset.rightIcon,
+      },
+      {
+        'title': "Best of pt. Bhimsen josi",
+        'icon': AppAsset.rightIcon,
+      },
+      {
+        'title': "Best of pt. Bhimsen josi",
+        'icon': AppAsset.rightIcon,
+      },
+      {
+        'title': "Best of pt. Bhimsen josi",
+        'icon': AppAsset.rightIcon,
+      },
+      {
+        'title': "Best of pt. Bhimsen josi",
+        'icon': AppAsset.rightIcon,
+      },
+      {
+        'title': "Best of pt. Bhimsen josi",
+        'icon': AppAsset.rightIcon,
+      },
+      {
+        'title': "Best of pt. Bhimsen josi",
+        'icon': AppAsset.rightIcon,
+      },
+      {
+        'title': "Best of pt. Bhimsen josi",
+        'icon': AppAsset.rightIcon,
       },
     ],
   };
-
-  Widget searchBar() {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(75),
-      child: TextField(
-        cursorHeight: 0,
-        cursorWidth: 0,
-        decoration: InputDecoration(
-          filled: true,
-          fillColor: const Color(0xFF5a5d61),
-          border: InputBorder.none,
-          prefix: Image.asset(
-            AppAsset.searchIcon,
-            height: Get.height / 45,
-          ),
-          hintText: "Search for classical music",
-          hintStyle: const TextStyle(
-            //           fontSize: 18,
-            // color: Colors.amber.shade100,
-            color: Color(0xFF919076),
-          ),
-          contentPadding: const EdgeInsets.symmetric(
-            vertical: 15,
-            horizontal: 20,
-          ),
-        ),
-      ),
-      // child: Container(
-      //   padding: const EdgeInsets.symmetric(
-      //     horizontal: 25,
-      //   ),
-      //   height: Get.height / 15,
-      //   width: double.infinity,
-      //   color: const Color(0xFF5a5d61),
-      //   child: Row(
-      //     children: [
-      //       Image.asset(
-      //         AppAsset.searchIcon,
-      //         height: Get.height / 30,
-      //       ),
-      //       SizedBox(
-      //         width: Get.width / 30,
-      //       ),
-      //       const Text(
-      //         "Search for classical music",
-      //         style: TextStyle(
-      //           fontSize: 18,
-      //           // color: Colors.amber.shade100,
-      //           color: Color(0xFF919076),
-      //         ),
-      //       )
-      //     ],
-      //   ),
-      // ),
-    );
-  }
-
-  Widget searchTextfild() {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(75),
-      child: Container(
-        decoration: BoxDecoration(
-          color: const Color(0xFF5a5d61),
-          border: Border.all(
-            color: Colors.grey.withOpacity(0.5),
-            width: 1.0,
-          ),
-          borderRadius: BorderRadius.circular(4.0),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20,
-          ),
-          child: Row(
-            children: [
-              Image.asset(
-                AppAsset.searchIcon,
-                height: Get.height / 45,
-              ),
-              Expanded(
-                child: TextField(
-                  style: TextStyle(
-                    color: Colors.amber.shade200,
-                  ),
-                  cursorHeight: 0,
-                  cursorWidth: 0,
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: const Color(0xFF5a5d61),
-                    border: InputBorder.none,
-                    hintText: "Search for classical music",
-                    hintStyle: TextStyle(
-                      color: Colors.amber.shade200,
-                      fontSize: 18,
-                    ),
-                    contentPadding: const EdgeInsets.symmetric(
-                      vertical: 15,
-                      horizontal: 20,
-                    ),
-                  ),
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget panchamCard() {
-    return Card(
-      color: Colors.white,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 10,
-              vertical: 20,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  "Time of the day",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 20,
-                  ),
-                ),
-                SizedBox(
-                  height: Get.height / 90,
-                ),
-                const Text(
-                  "Pancham Prahar",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 23,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            height: Get.height / 5,
-            width: double.infinity,
-            color: Colors.blue,
-            child: Image.asset(
-              AppAsset.staticImage,
-              fit: BoxFit.cover,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 10,
-              vertical: 10,
-            ).copyWith(bottom: 15),
-            child: Row(
-              children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.amber,
-                    padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 9),
-                  ),
-                  child: const Text(
-                    "play",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
-                const Spacer(),
-                Image.asset(
-                  AppAsset.whatsappIcon,
-                  height: Get.height / 30,
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 
   Widget playContain() {
     return Container(
@@ -429,90 +302,95 @@ class _HindustaniPageState extends State<HindustaniPage> {
           // color: Colors.pink,
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  ClipOval(
-                    child: Container(
-                      padding: const EdgeInsets.all(20),
-                      alignment: Alignment.center,
-                      height: Get.height / 14,
-                      width: Get.height / 14,
-                      color: Colors.amber,
-                      child: Image.asset(
-                        AppAsset.playIcon,
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 5,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    ClipOval(
+                      child: Container(
+                        padding: const EdgeInsets.all(20),
+                        alignment: Alignment.center,
+                        height: Get.height / 14,
+                        width: Get.height / 14,
+                        color: Colors.amber,
+                        child: Image.asset(
+                          AppAsset.playIcon,
+                        ),
                       ),
                     ),
-                  ),
-                  // Center(
-                  //   child: CircleAvatar(
-                  //     maxRadius: 35,
-                  //     backgroundColor: Colors.amber,
-                  //     child: Image.asset(
-                  //       AppAsset.playIcon,
-                  //       height: Get.height / 30,
-                  //     ),
-                  //   ),
-                  // ),
+                    // Center(
+                    //   child: CircleAvatar(
+                    //     maxRadius: 35,
+                    //     backgroundColor: Colors.amber,
+                    //     child: Image.asset(
+                    //       AppAsset.playIcon,
+                    //       height: Get.height / 30,
+                    //     ),
+                    //   ),
+                    // ),
 
-                  SizedBox(
-                    width: Get.width / 30,
-                  ),
+                    SizedBox(
+                      width: Get.width / 30,
+                    ),
 
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        "Popular Raaga",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 24,
-                          color: Colors.black,
-                        ),
-                      ),
-                      SizedBox(
-                        height: Get.height / 80,
-                      ),
-                      const Text(
-                        "Popular Raaga",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 18,
-                        ),
-                      ),
-                    ],
-                  ),
-
-                  const Spacer(),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const PopularRaagaScreen(),
-                        ),
-                      );
-                    },
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(35),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 12,
-                          horizontal: 20,
-                        ),
-                        color: Colors.amber,
-                        child: const Text(
-                          "see All",
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          "Popular Raaga",
                           style: TextStyle(
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 24,
+                            color: Colors.black,
+                          ),
+                        ),
+                        SizedBox(
+                          height: Get.height / 80,
+                        ),
+                        const Text(
+                          "Popular Raaga",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
                             fontSize: 18,
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    const Spacer(),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const PopularRaagaScreen(),
+                          ),
+                        );
+                      },
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(35),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 12,
+                            horizontal: 20,
+                          ),
+                          color: Colors.amber,
+                          child: const Text(
+                            "see All",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 18,
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               SizedBox(
                 height: Get.height / 60,
@@ -621,7 +499,7 @@ class _HindustaniPageState extends State<HindustaniPage> {
     );
   }
 
-  Widget instrumental() {
+  Widget mustListen() {
     return Column(
       children: [
         Container(
@@ -633,61 +511,66 @@ class _HindustaniPageState extends State<HindustaniPage> {
           // color: Colors.pink,
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  ClipOval(
-                    child: Container(
-                      padding: const EdgeInsets.all(20),
-                      alignment: Alignment.center,
-                      height: Get.height / 14,
-                      width: Get.height / 14,
-                      color: Colors.amber,
-                      child: Image.asset(
-                        AppAsset.playIcon,
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 5,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    ClipOval(
+                      child: Container(
+                        padding: const EdgeInsets.all(20),
+                        alignment: Alignment.center,
+                        height: Get.height / 14,
+                        width: Get.height / 14,
+                        color: Colors.amber,
+                        child: Image.asset(
+                          AppAsset.playIcon,
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    width: Get.width / 30,
-                  ),
-                  const Text(
-                    "Must Listens",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 24,
-                      color: Colors.black,
+                    SizedBox(
+                      width: Get.width / 30,
                     ),
-                  ),
-                  const Spacer(),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const PopularRaagaScreen(),
-                        ),
-                      );
-                    },
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(35),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 12,
-                          horizontal: 20,
-                        ),
-                        color: Colors.amber,
-                        child: const Text(
-                          "see All",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 18,
+                    const Text(
+                      "Must Listens",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 24,
+                        color: Colors.black,
+                      ),
+                    ),
+                    const Spacer(),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const PopularRaagaScreen(),
+                          ),
+                        );
+                      },
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(35),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 12,
+                            horizontal: 20,
+                          ),
+                          color: Colors.amber,
+                          child: const Text(
+                            "see All",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 18,
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               SizedBox(
                 height: Get.height / 60,
@@ -739,6 +622,630 @@ class _HindustaniPageState extends State<HindustaniPage> {
     );
   }
 
+  Widget popularCombo() {
+    return Column(
+      children: [
+        Container(
+          margin: const EdgeInsets.symmetric(
+            vertical: 40,
+          ).copyWith(bottom: 0),
+          // height: Get.height / 10,
+          width: double.infinity,
+          // color: Colors.pink,
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 5,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    ClipOval(
+                      child: Container(
+                        padding: const EdgeInsets.all(20),
+                        alignment: Alignment.center,
+                        height: Get.height / 14,
+                        width: Get.height / 14,
+                        color: Colors.amber,
+                        child: Image.asset(
+                          AppAsset.playIcon,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: Get.width / 30,
+                    ),
+                    SizedBox(
+                      width: Get.width / 2,
+                      // color: Colors.amber,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            "Popular",
+                            softWrap: false,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 24,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const Spacer(),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const PopularRaagaScreen(),
+                          ),
+                        );
+                      },
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(35),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 12,
+                            horizontal: 20,
+                          ),
+                          color: Colors.amber,
+                          child: const Text(
+                            "see All",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: Get.height / 60,
+              ),
+              Container(
+                // padding: const EdgeInsets.symmetric(
+                //   vertical: 20,
+                // ).copyWith(
+                //   top: 0,
+                // ),
+                // color: Colors.amber,
+                height: Get.height / 2.8,
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return Column(
+                      children: [
+                        Expanded(
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Card(
+                              // color: Colors.green,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Expanded(
+                                    child: Container(
+                                      width: Get.width / 3.5,
+                                      color: Colors.pink,
+                                      child: Image.asset(
+                                        playData['instrumentalData'][index]['gazal2'],
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 6,
+                                      vertical: 5,
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "${playData['instrumentalData'][index]['title']}",
+                                          style: const TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w600,
+                                            color: Colors.black,
+                                          ),
+                                        ),
+                                        Text(
+                                          "${playData['instrumentalData'][index]['title']}",
+                                          style: const TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w500,
+                                            color: Colors.black,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Card(
+                              // color: Colors.green,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Expanded(
+                                    child: Container(
+                                      width: Get.width / 3.5,
+                                      color: Colors.pink,
+                                      child: Image.asset(
+                                        playData['instrumentalData'][index]['gazal2'],
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 6,
+                                      vertical: 10,
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "${playData['instrumentalData'][index]['title']}",
+                                          style: const TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w600,
+                                            color: Colors.black,
+                                          ),
+                                        ),
+                                        Text(
+                                          "${playData['instrumentalData'][index]['title']}",
+                                          style: const TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w500,
+                                            color: Colors.black,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    );
+                  },
+                  separatorBuilder: (context, index) => SizedBox(
+                    width: Get.width / 30,
+                  ),
+                  itemCount: playData['instrumentalData'].length,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget instrumental() {
+    return Column(
+      children: [
+        Container(
+          margin: const EdgeInsets.symmetric(
+            vertical: 40,
+          ).copyWith(bottom: 0),
+          // height: Get.height / 10,
+          width: double.infinity,
+          // color: Colors.pink,
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 5,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    ClipOval(
+                      child: Container(
+                        padding: const EdgeInsets.all(20),
+                        alignment: Alignment.center,
+                        height: Get.height / 14,
+                        width: Get.height / 14,
+                        color: Colors.amber,
+                        child: Image.asset(
+                          AppAsset.playIcon,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: Get.width / 30,
+                    ),
+                    SizedBox(
+                      width: Get.width / 2,
+                      // color: Colors.amber,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "Instrumental",
+                            softWrap: false,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 24,
+                              color: Colors.black,
+                            ),
+                          ),
+                          SizedBox(
+                            height: Get.height / 80,
+                          ),
+                          const Text(
+                            "Daily prayers for a happy living",
+                            softWrap: false,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const Spacer(),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const PopularRaagaScreen(),
+                          ),
+                        );
+                      },
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(35),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 12,
+                            horizontal: 20,
+                          ),
+                          color: Colors.amber,
+                          child: const Text(
+                            "see All",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: Get.height / 60,
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 20,
+                ).copyWith(
+                  top: 0,
+                ),
+                // color: Colors.amber,
+                height: Get.height / 3.5,
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      // color: Colors.green,
+                      child: Column(
+                        children: [
+                          Container(
+                            // color: Colors.pink,
+                            height: Get.width / 2.5,
+                            width: Get.width / 2.5,
+                            child: Card(
+                              color: playData['instrumentalData'][index]['color'],
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Material(
+                                    elevation: 3,
+                                    color: Colors.grey,
+                                    shape: const CircleBorder(),
+                                    child: ClipOval(
+                                      child: SizedBox(
+                                        height: Get.width / 4,
+                                        width: Get.width / 4,
+                                        child: Image.asset(
+                                          playData['instrumentalData'][index]['images'],
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Text(
+                                    "${playData['instrumentalData'][index]['title']}",
+                                    style: const TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          const Spacer(),
+                          Text(
+                            "${playData['instrumentalData'][index]['title']}",
+                            style: const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black,
+                            ),
+                          ),
+                          const Spacer(),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 15,
+                              vertical: 2,
+                            ),
+                            margin: const EdgeInsets.symmetric(),
+                            height: Get.height / 30,
+                            width: Get.width / 3,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: Colors.white,
+                              border: Border.all(
+                                color: Colors.black,
+                              ),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Image.asset(
+                                    AppAsset.radioIcon,
+                                    height: Get.height / 60,
+                                  ),
+                                  SizedBox(
+                                    width: Get.width / 50,
+                                  ),
+                                  const Text("Play Radio"),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                  separatorBuilder: (context, index) => SizedBox(
+                    width: Get.width / 30,
+                  ),
+                  itemCount: playData['instrumentalData'].length,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget talk() {
+    return Column(
+      children: [
+        Container(
+          margin: const EdgeInsets.symmetric(
+            vertical: 40,
+          ).copyWith(bottom: 0),
+          // height: Get.height / 10,
+          width: double.infinity,
+          // color: Colors.pink,
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 5,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    ClipOval(
+                      child: Container(
+                        padding: const EdgeInsets.all(20),
+                        alignment: Alignment.center,
+                        height: Get.height / 14,
+                        width: Get.height / 14,
+                        color: Colors.amber,
+                        child: Image.asset(
+                          AppAsset.playIcon,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: Get.width / 30,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          "Talk",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 24,
+                            color: Colors.black,
+                          ),
+                        ),
+                        SizedBox(
+                          height: Get.height / 80,
+                        ),
+                        const Text(
+                          "Popular sangeet podcasts",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 18,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const Spacer(),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const PopularRaagaScreen(),
+                          ),
+                        );
+                      },
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(35),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 12,
+                            horizontal: 20,
+                          ),
+                          color: Colors.amber,
+                          child: const Text(
+                            "see All",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: Get.height / 60,
+              ),
+              SizedBox(
+                height: Get.height / 3.5,
+                // width: Get.width / 1.1,
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return SizedBox(
+                      width: Get.width / 1.1,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Card(
+                          child: Column(
+                            children: [
+                              Expanded(
+                                child: Container(
+                                  width: double.infinity,
+                                  color: Colors.green,
+                                  child: Image.asset(
+                                    playData['instrumentalData'][index]['gazal'],
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 10,
+                                  vertical: 20,
+                                ),
+                                child: Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    "${playData["playList"][index]['title']}",
+                                    style: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                  separatorBuilder: (context, index) => SizedBox(
+                    width: Get.width / 30,
+                  ),
+                  itemCount: playData['playList'].length,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget collection() {
+    return ListView.separated(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      separatorBuilder: (context, index) => SizedBox(
+        height: Get.height / 25,
+      ),
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 5,
+          ),
+          child: Container(
+            // color: Colors.teal,
+            child: Row(
+              children: [
+                Text(
+                  "${playData['collection'][index]['title']}",
+                  style: const TextStyle(
+                    fontSize: 20,
+                  ),
+                ),
+                const Spacer(),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const CollectionScreen(),
+                      ),
+                    );
+                  },
+                  child: Image.asset(
+                    AppAsset.rightIcon,
+                    height: Get.height / 35,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+      itemCount: playData['collection'].length,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -746,189 +1253,75 @@ class _HindustaniPageState extends State<HindustaniPage> {
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: 10,
+              horizontal: 5,
             ),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                searchTextfild(),
+                const SearchBar(),
                 SizedBox(
                   height: Get.height / 40,
                 ),
-                panchamCard(),
+                const TimeOfTheDayWidget(),
                 popularRaaga(),
+                mustListen(),
                 instrumental(),
-                Column(
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.symmetric(
-                        vertical: 50,
-                      ).copyWith(bottom: 0),
-                      // height: Get.height / 10,
-                      width: double.infinity,
-                      // color: Colors.pink,
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              ClipOval(
-                                child: Container(
-                                  padding: const EdgeInsets.all(20),
-                                  alignment: Alignment.center,
-                                  height: Get.height / 14,
-                                  width: Get.height / 14,
-                                  color: Colors.amber,
-                                  child: Image.asset(
-                                    AppAsset.playIcon,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: Get.width / 30,
-                              ),
-                              SizedBox(
-                                width: Get.width / 2,
-                                // color: Colors.amber,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Text(
-                                      "Instrumental",
-                                      softWrap: false,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 24,
-                                        color: Colors.black,
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height: Get.height / 80,
-                                    ),
-                                    const Text(
-                                      "Daily prayers for a happy living",
-                                      softWrap: false,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              const Spacer(),
-                              InkWell(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => const PopularRaagaScreen(),
-                                    ),
-                                  );
-                                },
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(35),
-                                  child: Container(
-                                    padding: const EdgeInsets.symmetric(
-                                      vertical: 12,
-                                      horizontal: 20,
-                                    ),
-                                    color: Colors.amber,
-                                    child: const Text(
-                                      "see All",
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 18,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: Get.height / 60,
-                          ),
-                          Container(
-                            // padding: const EdgeInsets.only(
-                            //   bottom: 40,
-                            // ),
-                            color: Colors.amber,
-                            height: Get.height / 3,
-                            child: ListView.separated(
-                              scrollDirection: Axis.horizontal,
-                              itemBuilder: (context, index) {
-                                return Container(
-                                  color: Colors.green,
-                                  child: Column(
-                                    children: [
-                                      Container(
-                                        // color: Colors.pink,
-                                        height: Get.width / 2.5,
-                                        width: Get.width / 2.5,
-                                        child: Card(
-                                          color: playData['instrumentalData'][index]['color'],
-                                          child: Column(
-                                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              Material(
-                                                elevation: 3,
-                                                color: Colors.grey,
-                                                shape: const CircleBorder(),
-                                                child: ClipOval(
-                                                  child: SizedBox(
-                                                    height: Get.width / 4,
-                                                    width: Get.width / 4,
-                                                    child: Image.asset(
-                                                      playData['instrumentalData'][index]['images'],
-                                                      fit: BoxFit.cover,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              Text(
-                                                "${playData['instrumentalData'][index]['title']}",
-                                                style: const TextStyle(
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.w600,
-                                                  color: Colors.black,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                      Spacer(),
-                                      Text(
-                                        "${playData['instrumentalData'][index]['title']}",
-                                        style: const TextStyle(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.black,
-                                        ),
-                                      ),
-                                      Container(
-                                        margin: EdgeInsets.symmetric(),
-                                        height: Get.height / 10,
-                                        width: Get.width / 10,
-                                        color: Colors.black,
-                                      ),
-                                    ],
-                                  ),
-                                );
-                              },
-                              separatorBuilder: (context, index) => SizedBox(
-                                width: Get.width / 30,
-                              ),
-                              itemCount: playData['instrumentalData'].length,
-                            ),
-                          ),
-                        ],
+                talk(),
+                popularCombo(),
+                const RadioContain(
+                  title: "Radio",
+                ),
+                const InsrumentalistContain(
+                  title: "Insrumentalist",
+                ),
+                const InsrumentalistContain(
+                  title: "Insrumentalist",
+                ),
+                SizedBox(
+                  height: Get.height / 20,
+                ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 5,
+                  ),
+                  child: Text(
+                    "Collection",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: Get.height / 30,
+                ),
+                collection(),
+                SizedBox(
+                  height: Get.height / 30,
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const CollectionScreen(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    height: Get.height / 18,
+                    color: Colors.amber,
+                    child: const Center(
+                      child: Text(
+                        "See More Collection",
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ],
+                  ),
                 ),
               ],
             ),

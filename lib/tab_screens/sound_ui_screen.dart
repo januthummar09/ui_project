@@ -34,10 +34,7 @@ class _SoundUiScreenState extends State<SoundUiScreen> with TickerProviderStateM
   @override
   void initState() {
     // TODO: implement initState
-    tabController = TabController(
-      vsync: this,
-      length: nameList.length,
-    );
+    tabController = TabController(vsync: this, length: nameList.length);
     super.initState();
   }
 
