@@ -1,12 +1,17 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ui_project/utils/app_asset.dart';
 
 class TimeOfTheDayWidget extends StatelessWidget {
-  const TimeOfTheDayWidget({Key? key}) : super(key: key);
+  final Map<String, dynamic> item;
+  const TimeOfTheDayWidget({required this.item, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var data = Map<String, dynamic>.from(item['data'][0]);
+    debugPrint('Network Image ==>${data['img'].toString()}');
+
     return Card(
       color: Colors.white,
       child: Column(
@@ -20,9 +25,9 @@ class TimeOfTheDayWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  "Time of the day",
-                  style: TextStyle(
+                Text(
+                  item['subtitle'].toString(),
+                  style: const TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 20,
                   ),
@@ -30,9 +35,9 @@ class TimeOfTheDayWidget extends StatelessWidget {
                 SizedBox(
                   height: Get.height / 90,
                 ),
-                const Text(
-                  "Pancham Prahar",
-                  style: TextStyle(
+                Text(
+                  item['title'].toString(),
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 23,
                   ),
@@ -40,14 +45,10 @@ class TimeOfTheDayWidget extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            height: Get.height / 5,
-            width: double.infinity,
-            color: Colors.blue,
-            child: Image.asset(
-              AppAsset.staticImage,
-              fit: BoxFit.cover,
-            ),
+          CachedNetworkImage(
+            imageUrl: data['img'].toString(),
+            placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(

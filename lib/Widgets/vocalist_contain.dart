@@ -5,7 +5,8 @@ import '../play_screens/popular_raga_screen.dart';
 import '../utils/app_asset.dart';
 
 class VocalistContain extends StatefulWidget {
-  const VocalistContain({Key? key}) : super(key: key);
+  final Map<String, dynamic> item;
+  const VocalistContain({Key? key, required this.item}) : super(key: key);
 
   @override
   State<VocalistContain> createState() => _VocalistContainState();
@@ -190,9 +191,9 @@ class _VocalistContainState extends State<VocalistContain> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    const Text(
-                      "Vocalist",
-                      style: TextStyle(
+                    Text(
+                      widget.item['title'],
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 24,
                         color: Colors.black,

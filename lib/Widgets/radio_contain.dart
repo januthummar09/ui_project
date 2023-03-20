@@ -1,12 +1,12 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../play_screens/popular_raga_screen.dart';
-import '../utils/app_asset.dart';
 
 class RadioContain extends StatefulWidget {
-  final String? title;
-  const RadioContain({Key? key, this.title}) : super(key: key);
+  final Map<String, dynamic> item;
+  const RadioContain({Key? key, required this.item}) : super(key: key);
 
   @override
   State<RadioContain> createState() => _RadioContainState();
@@ -15,6 +15,8 @@ class RadioContain extends StatefulWidget {
 class _RadioContainState extends State<RadioContain> {
   @override
   Widget build(BuildContext context) {
+    var data = List<Map<String, dynamic>>.from(widget.item['data']);
+
     return Column(
       children: [
         Container(
@@ -34,7 +36,7 @@ class _RadioContainState extends State<RadioContain> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      widget.title!,
+                      widget.item['title'].toString(),
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 24,
@@ -86,6 +88,8 @@ class _RadioContainState extends State<RadioContain> {
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
+                    var listItem = data[index];
+
                     return ClipRRect(
                       borderRadius: BorderRadius.circular(20),
                       child: Card(
@@ -98,9 +102,10 @@ class _RadioContainState extends State<RadioContain> {
                               Expanded(
                                 child: Container(
                                   color: Colors.pink,
-                                  child: Image.asset(
-                                    AppAsset.gazalImage,
-                                    fit: BoxFit.cover,
+                                  child: CachedNetworkImage(
+                                    imageUrl: listItem['profileImg'].toString(),
+                                    placeholder: (context, url) => const CircularProgressIndicator(),
+                                    errorWidget: (context, url, error) => Icon(Icons.error),
                                   ),
                                 ),
                               ),
@@ -140,7 +145,7 @@ class _RadioContainState extends State<RadioContain> {
                   separatorBuilder: (context, index) => SizedBox(
                     width: Get.width / 30,
                   ),
-                  itemCount: 2,
+                  itemCount: data.length,
                 ),
               ),
             ],
