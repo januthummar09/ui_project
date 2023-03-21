@@ -1,8 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../play_screens/popular_raga_screen.dart';
+import 'package:ui_project/Widgets/see_all_button.dart';
 
 class InsrumentalistContain extends StatefulWidget {
   final Map<String, dynamic> item;
@@ -29,7 +28,7 @@ class _InsrumentalistContainState extends State<InsrumentalistContain> {
       children: [
         Container(
           margin: const EdgeInsets.symmetric(
-            vertical: 40,
+            vertical: 15,
           ).copyWith(bottom: 0),
           // height: Get.height / 10,
           width: double.infinity,
@@ -48,46 +47,21 @@ class _InsrumentalistContainState extends State<InsrumentalistContain> {
                       item['title'].toString(),
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 24,
+                        fontSize: 18,
                         color: Colors.black,
                       ),
                     ),
                     const Spacer(),
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const PopularRaagaScreen(),
-                          ),
-                        );
-                      },
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(35),
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 12,
-                            horizontal: 20,
-                          ),
-                          color: Colors.amber,
-                          child: const Text(
-                            "see All",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 18,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+                    const SeeAllButton(),
                   ],
                 ),
               ),
-              SizedBox(
-                height: Get.height / 60,
+              const SizedBox(
+                height: 10,
               ),
-              SizedBox(
-                height: Get.height / 5.5,
+              Container(
+                // color: Colors.red,
+                height: Get.width / 3 + 18 + 10,
                 child: ListView.separated(
                   itemCount: data.length,
                   scrollDirection: Axis.horizontal,
@@ -97,22 +71,19 @@ class _InsrumentalistContainState extends State<InsrumentalistContain> {
                     return Container(
                       // color: Colors.teal,
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Card(
-                            shape: RoundedRectangleBorder(
-                              side: const BorderSide(
-                                color: Colors.grey, //<-- SEE HERE
+                          ClipOval(
+                            child: Container(
+                              width: Get.width / 3,
+                              height: Get.width / 3,
+                              color: Colors.indigo,
+                              child: CachedNetworkImage(
+                                imageUrl: listItem['profileImg'].toString(),
+                                fit: BoxFit.cover,
+                                placeholder: (context, url) => const CircularProgressIndicator(),
+                                errorWidget: (context, url, error) => const Icon(Icons.error),
                               ),
-                              borderRadius: BorderRadius.circular(65),
-                            ),
-                            shadowColor: Colors.black,
-                            clipBehavior: Clip.antiAlias,
-                            child: CachedNetworkImage(
-                              imageUrl: listItem['profileImg'].toString(),
-                              width: 130,
-                              height: 130,
-                              placeholder: (context, url) => const CircularProgressIndicator(),
-                              errorWidget: (context, url, error) => const Icon(Icons.error),
                             ),
                           ),
 
@@ -157,7 +128,7 @@ class _InsrumentalistContainState extends State<InsrumentalistContain> {
                           //     height: Get.width / 3.2,
                           //   ),
                           // ),
-                          const Spacer(),
+
                           Text(listItem['name'].toString()),
                         ],
                       ),

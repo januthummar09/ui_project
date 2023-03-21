@@ -10,7 +10,6 @@ class TimeOfTheDayWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var data = Map<String, dynamic>.from(item['data'][0]);
-    debugPrint('Network Image ==>${data['img'].toString()}');
 
     return Card(
       color: Colors.white,

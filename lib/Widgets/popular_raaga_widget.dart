@@ -56,6 +56,8 @@ class PopularRaagaWidget extends StatelessWidget {
               ),
               Text(
                 item['desc'].toString(),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontSize: 15,
                   color: textColor,
@@ -73,13 +75,9 @@ class PopularRaagaWidget extends StatelessWidget {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(22),
                     child: Container(
-                      height: Get.height / 20,
-                      width: Get.width / 3.2,
                       color: Colors.white,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 3,
-                        vertical: 5,
-                      ),
+                      height: 40,
+                      padding: const EdgeInsets.only(left: 0, right: 10, top: 5, bottom: 5),
                       child: Row(
                         children: [
                           CircleAvatar(
@@ -91,9 +89,6 @@ class PopularRaagaWidget extends StatelessWidget {
                                 color: Colors.white,
                               ),
                             ),
-                          ),
-                          SizedBox(
-                            width: Get.width / 30,
                           ),
                           Text(
                             'Listen',

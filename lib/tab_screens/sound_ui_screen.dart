@@ -52,30 +52,30 @@ class _SoundUiScreenState extends State<SoundUiScreen> with TickerProviderStateM
             children: [
               Row(
                 children: [
-                  Image.asset(AppAsset.logoIcon, width: Get.width / 3),
+                  Image.asset(
+                    AppAsset.logoIcon,
+                    width: Get.width / 3,
+                  ),
                   const Spacer(),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 10,
-                      ),
-                      height: Get.height / 23,
-                      width: Get.width / 2.6,
-                      color: Colors.black,
+                  Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    color: Colors.black,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 7, horizontal: 10),
                       child: Row(
                         children: const [
                           Icon(
                             Icons.bolt,
                             color: Colors.amber,
-                            size: 25,
+                            size: 19,
                           ),
-                          Spacer(),
                           Text(
                             "Try premium",
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 20,
+                              fontSize: 15,
                               fontWeight: FontWeight.bold,
                             ),
                           )
@@ -85,8 +85,8 @@ class _SoundUiScreenState extends State<SoundUiScreen> with TickerProviderStateM
                   ),
                 ],
               ),
-              SizedBox(
-                height: Get.height / 60,
+              const SizedBox(
+                height: 10,
               ),
               DefaultTabController(
                 length: 5,
@@ -126,13 +126,6 @@ class _SoundUiScreenState extends State<SoundUiScreen> with TickerProviderStateM
         child: Column(
           children: [
             navBar(),
-            // DefaultTabController(
-            //   length: 5,
-            //   child: tabBar(),
-            // ),
-            SizedBox(
-              height: Get.height / 50,
-            ),
             Expanded(
               child: TabBarView(
                 controller: tabController,
