@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:ui_project/Pages/hindustanipage.dart';
 import 'package:ui_project/utils/app_asset.dart';
 
+import '../Pages/carnatic_screen.dart';
+
 class SoundUiScreen extends StatefulWidget {
   const SoundUiScreen({Key? key}) : super(key: key);
 
@@ -131,7 +133,7 @@ class _SoundUiScreenState extends State<SoundUiScreen> with TickerProviderStateM
                 controller: tabController,
                 children: [
                   const HindustaniPage(),
-                  Container(color: Colors.blue),
+                  const CarnaticPage(),
                   Container(color: Colors.grey),
                   Container(color: Colors.green),
                   Container(color: Colors.teal),

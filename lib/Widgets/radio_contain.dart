@@ -2,9 +2,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ui_project/Widgets/see_all_button.dart';
+import 'package:ui_project/models/HomeModel.dart';
 
 class RadioContain extends StatefulWidget {
-  final Map<String, dynamic> item;
+  final HomeItemModel item;
   const RadioContain({Key? key, required this.item}) : super(key: key);
 
   @override
@@ -14,7 +15,7 @@ class RadioContain extends StatefulWidget {
 class _RadioContainState extends State<RadioContain> {
   @override
   Widget build(BuildContext context) {
-    var data = List<Map<String, dynamic>>.from(widget.item['data']);
+    var data = widget.item.data;
 
     return Column(
       children: [
@@ -35,7 +36,7 @@ class _RadioContainState extends State<RadioContain> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      widget.item['title'].toString(),
+                      widget.item.title,
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
@@ -73,7 +74,7 @@ class _RadioContainState extends State<RadioContain> {
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               CachedNetworkImage(
-                                imageUrl: listItem['profileImg'].toString(),
+                                imageUrl: listItem.profileImg.toString(),
                                 fit: BoxFit.cover,
                                 placeholder: (context, url) => const CircularProgressIndicator(),
                                 errorWidget: (context, url, error) => const Icon(Icons.error),
@@ -88,7 +89,7 @@ class _RadioContainState extends State<RadioContain> {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        listItem['name'].toString(),
+                                        listItem.name.toString(),
                                         overflow: TextOverflow.ellipsis,
                                         style: const TextStyle(
                                           fontSize: 16,
@@ -97,7 +98,7 @@ class _RadioContainState extends State<RadioContain> {
                                         ),
                                       ),
                                       Text(
-                                        listItem['castTypeName'].toString(),
+                                        listItem.castTypeName.toString(),
                                         style: const TextStyle(
                                           fontSize: 14,
                                           fontWeight: FontWeight.w500,

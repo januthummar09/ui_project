@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:ui_project/login_screen.dart';
 
 import '../tab_screens/sound_ui_screen.dart';
 
@@ -14,10 +17,15 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   List pages = [
     const SoundUiScreen(),
-    Container(
-      height: 200,
-      width: 200,
-      color: Colors.yellow,
+    InkWell(
+      onTap: () => Get.to(
+        const LoginScreen(),
+      ),
+      child: Container(
+        height: 200,
+        width: 200,
+        color: Colors.yellow,
+      ),
     ),
     Container(
       height: 200,

@@ -1,15 +1,16 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ui_project/models/HomeModel.dart';
 import 'package:ui_project/utils/app_asset.dart';
 
 class TimeOfTheDayWidget extends StatelessWidget {
-  final Map<String, dynamic> item;
+  final HomeItemModel item;
   const TimeOfTheDayWidget({required this.item, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var data = Map<String, dynamic>.from(item['data'][0]);
+    var data = item.data[0];
 
     return Card(
       color: Colors.white,
@@ -25,7 +26,7 @@ class TimeOfTheDayWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  item['subtitle'].toString(),
+                  item.title,
                   style: const TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 20,
@@ -35,7 +36,7 @@ class TimeOfTheDayWidget extends StatelessWidget {
                   height: Get.height / 90,
                 ),
                 Text(
-                  item['title'].toString(),
+                  item.subtitle ?? '',
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 23,
@@ -45,7 +46,7 @@ class TimeOfTheDayWidget extends StatelessWidget {
             ),
           ),
           CachedNetworkImage(
-            imageUrl: data['img'].toString(),
+            imageUrl: data.img.toString(),
             placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
             errorWidget: (context, url, error) => const Icon(Icons.error),
           ),

@@ -1,11 +1,11 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../play_screens/popular_raga_screen.dart';
-import '../utils/app_asset.dart';
+import 'package:ui_project/Widgets/see_all_button.dart';
+import 'package:ui_project/models/HomeModel.dart';
 
 class VocalistContain extends StatefulWidget {
-  final Map<String, dynamic> item;
+  final HomeItemModel item;
   const VocalistContain({Key? key, required this.item}) : super(key: key);
 
   @override
@@ -13,170 +13,22 @@ class VocalistContain extends StatefulWidget {
 }
 
 class _VocalistContainState extends State<VocalistContain> {
-  Map playData = {
-    "playList": [
-      {
-        "title": "Jaijaiwanti",
-        "discreption": "Jaijaiwanti or Jaijaiwanti is a hindustani classical raga belonging to khamaj thaat.",
-        "whatsappIcon": AppAsset.whatsappIcon,
-        "playIcon": AppAsset.playIcon,
-        "buttonName": "Listen",
-        "color": const Color(0xFFdfdefc),
-        "textColor": const Color(0xFF020b3d),
-      },
-      {
-        "title": "Tilak Kamod",
-        "discreption": "Tilak Kamod is a Hindustani classical raga.",
-        "whatsappIcon": AppAsset.whatsappIcon,
-        "playIcon": AppAsset.playIcon,
-        "buttonName": "Listen",
-        "color": const Color(0xFFf6e3fc),
-        "textColor": const Color(0xFFb31044),
-      },
-      {
-        "title": "Darbari",
-        "discreption": "Darbari Kanada, or simply Raga Darbari, (pronounced Darbari kanada) is a raga in the kanada family",
-        "whatsappIcon": AppAsset.whatsappIcon,
-        "playIcon": AppAsset.playIcon,
-        "buttonName": "Listen",
-        "color": const Color(0xFFf0ebed),
-        "textColor": const Color(0xFF595254),
-      },
-      {
-        "title": "Abhogi",
-        "discreption": "Jaijaiwanti or Jaijaiwanti is a hindustani classical raga belonging to khamaj thaat.",
-        "whatsappIcon": AppAsset.whatsappIcon,
-        "playIcon": AppAsset.playIcon,
-        "buttonName": "Listen",
-        "color": const Color(0xFFf6e3fc),
-        "textColor": const Color(0xFFb31044),
-      },
-      {
-        "title": "Multani",
-        "discreption": "Jaijaiwanti or Jaijaiwanti is a hindustani classical raga belonging to khamaj thaat.",
-        "whatsappIcon": AppAsset.whatsappIcon,
-        "playIcon": AppAsset.playIcon,
-        "buttonName": "Listen",
-        "color": const Color(0xFFdfdefc),
-        "textColor": const Color(0xFF020b3d),
-      },
-      {
-        "title": "Madhuwanti",
-        "discreption": "Jaijaiwanti or Jaijaiwanti is a hindustani classical raga belonging to khamaj thaat.",
-        "whatsappIcon": AppAsset.whatsappIcon,
-        "playIcon": AppAsset.playIcon,
-        "buttonName": "Listen",
-        "color": const Color(0xFFf6e3fc),
-        "textColor": const Color(0xFFb31044),
-      },
-      {
-        "title": "shankara",
-        "discreption": "Jaijaiwanti or Jaijaiwanti is a hindustani classical raga belonging to khamaj thaat.",
-        "whatsappIcon": AppAsset.whatsappIcon,
-        "playIcon": AppAsset.playIcon,
-        "buttonName": "Listen",
-        "color": const Color(0xFFf0ebed),
-        "textColor": const Color(0xFF595254),
-      },
-    ],
-    "listensData": [
-      {
-        'images': AppAsset.music6,
-        'title': "All",
-      },
-      {
-        'images': AppAsset.music8,
-        'title': "Wind",
-      },
-      {
-        'images': AppAsset.music10,
-        'title': "Strings",
-      },
-      {
-        'images': AppAsset.music3,
-        'title': "Percussion",
-      },
-    ],
-    "instrumentalData": [
-      {
-        "title": "Sarod",
-        'images': AppAsset.music6,
-        'color': const Color(0xFF4f4248),
-        "gazal": AppAsset.gazalImage,
-        "gazal2": AppAsset.gazal2Image,
-      },
-      {
-        "title": "Violin",
-        'images': AppAsset.music2,
-        'color': const Color(0xFF4d023f),
-        "gazal": AppAsset.gazalImage,
-        "gazal2": AppAsset.gazal2Image,
-      },
-      {
-        "title": "Sitar",
-        'images': AppAsset.music3,
-        'color': const Color(0xFF2b1e24),
-        "gazal": AppAsset.gazalImage,
-        "gazal2": AppAsset.gazal2Image,
-      },
-      {
-        "title": "Flute",
-        'images': AppAsset.music8,
-        'color': const Color(0xFF153b0b),
-        "gazal": AppAsset.gazalImage,
-        "gazal2": AppAsset.gazal2Image,
-      },
-      {
-        "title": "Plano",
-        'images': AppAsset.music5,
-        'color': const Color(0xFF4f4248),
-        "gazal": AppAsset.gazalImage,
-        "gazal2": AppAsset.gazal2Image,
-      },
-      {
-        "title": "Jal Tarang",
-        'images': AppAsset.music1,
-        'color': const Color(0xFF4d023f),
-        "gazal": AppAsset.gazalImage,
-        "gazal2": AppAsset.gazal2Image,
-      },
-      {
-        "title": "Shehnai",
-        'images': AppAsset.music4,
-        'color': const Color(0xFF2b1e24),
-        "gazal": AppAsset.gazalImage,
-        "gazal2": AppAsset.gazal2Image,
-      },
-      {
-        "title": "Tabla",
-        'images': AppAsset.music3,
-        'color': const Color(0xFF153b0b),
-        "gazal": AppAsset.gazalImage,
-        "gazal2": AppAsset.gazal2Image,
-      },
-      {
-        "title": "Santoor",
-        'images': AppAsset.music2,
-        'color': const Color(0xFF2b1e24),
-        "gazal": AppAsset.gazalImage,
-        "gazal2": AppAsset.gazal2Image,
-      },
-      {
-        "title": "harmonium",
-        'images': AppAsset.music7,
-        'color': const Color(0xFF153b0b),
-        "gazal": AppAsset.gazalImage,
-        "gazal2": AppAsset.gazal2Image,
-      },
-    ],
-  };
+  // List<Map<String, dynamic>> data;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    // item = widget.item;
+  }
+
   @override
   Widget build(BuildContext context) {
+    var data = widget.item.data;
     return Column(
       children: [
         Container(
           margin: const EdgeInsets.symmetric(
-            vertical: 40,
+            vertical: 15,
           ).copyWith(bottom: 0),
           // height: Get.height / 10,
           width: double.infinity,
@@ -192,70 +44,49 @@ class _VocalistContainState extends State<VocalistContain> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      widget.item['title'],
+                      widget.item.title,
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 24,
+                        fontSize: 18,
                         color: Colors.black,
                       ),
                     ),
                     const Spacer(),
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const PopularRaagaScreen(),
-                          ),
-                        );
-                      },
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(35),
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 12,
-                            horizontal: 20,
-                          ),
-                          color: Colors.amber,
-                          child: const Text(
-                            "see All",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 18,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+                    const SeeAllButton(),
                   ],
                 ),
               ),
-              SizedBox(
-                height: Get.height / 60,
+              const SizedBox(
+                height: 10,
               ),
               Container(
-                // margin: EdgeInsets.symmetric(
-                //   vertical: 0,
-                // ).copyWith(
-                //   bottom: 0,
-                // ),
-                // color: Colors.amber,
-                height: Get.height / 5.5,
+                // color: Colors.red,
+                height: Get.width / 3 + 18 + 10,
                 child: ListView.separated(
+                  itemCount: data.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
+                    var listItem = data[index];
+
                     return Container(
                       // color: Colors.teal,
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          CircleAvatar(
-                            radius: 65,
-                            backgroundColor: Colors.grey,
-                            child: CircleAvatar(
-                              backgroundImage: AssetImage(playData['instrumentalData'][index]['images']),
-                              radius: 64,
+                          ClipOval(
+                            child: Container(
+                              width: Get.width / 3,
+                              height: Get.width / 3,
+                              color: Colors.indigo,
+                              child: CachedNetworkImage(
+                                imageUrl: listItem.profileImg.toString(),
+                                fit: BoxFit.cover,
+                                placeholder: (context, url) => const CircularProgressIndicator(),
+                                errorWidget: (context, url, error) => const Icon(Icons.error),
+                              ),
                             ),
                           ),
+
                           // Container(
                           //   decoration: BoxDecoration(
                           //     border: Border.all(
@@ -297,10 +128,8 @@ class _VocalistContainState extends State<VocalistContain> {
                           //     height: Get.width / 3.2,
                           //   ),
                           // ),
-                          const Spacer(),
-                          Text(
-                            "${playData['instrumentalData'][index]['title']}",
-                          ),
+
+                          Text(listItem.name.toString()),
                         ],
                       ),
                     );
@@ -308,7 +137,6 @@ class _VocalistContainState extends State<VocalistContain> {
                   separatorBuilder: (context, index) => SizedBox(
                     width: Get.width / 30,
                   ),
-                  itemCount: playData['instrumentalData'].length,
                 ),
               ),
             ],

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ui_project/Pages/homepage.dart';
+import 'package:ui_project/Binding/home_page_binding.dart';
+import 'package:ui_project/utils/routes/route_name.dart';
+import 'package:ui_project/utils/routes/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +21,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         fontFamily: "Roboto",
       ),
-      home: const HomePage(),
+      getPages: routeList,
+      initialRoute: RouteName.homePage,
+      initialBinding: HomePageBinding(),
+      // home: const HomePage(),
     );
   }
 }
