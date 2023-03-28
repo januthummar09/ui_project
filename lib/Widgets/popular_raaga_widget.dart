@@ -5,7 +5,8 @@ import 'package:get/get.dart';
 import 'package:ui_project/utils/app_asset.dart';
 
 class PopularRaagaWidget extends StatelessWidget {
-  final Map<String, dynamic> item;
+  final dynamic item;
+
   PopularRaagaWidget({required this.item, Key? key}) : super(key: key);
 
   final List<Color> colors = [
@@ -44,7 +45,7 @@ class PopularRaagaWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                item['name'].toString(),
+                item.name.toString(),
                 style: TextStyle(
                   fontWeight: FontWeight.w900,
                   fontSize: 25,
@@ -55,7 +56,7 @@ class PopularRaagaWidget extends StatelessWidget {
                 height: Get.height / 80,
               ),
               Text(
-                item['desc'].toString(),
+                item.desc.toString(),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(

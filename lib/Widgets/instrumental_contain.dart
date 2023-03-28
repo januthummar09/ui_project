@@ -18,6 +18,7 @@ class InstrumentalContain extends StatefulWidget {
 class _InstrumentalContainState extends State<InstrumentalContain> {
   @override
   Widget build(BuildContext context) {
+    // var data = widget.item.data;
     var data = widget.item.data;
 
     return Column(

@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
@@ -31,9 +30,8 @@ class HindustaniController extends GetxController {
     var response = await http.get(uri);
     if (response.statusCode == 200) {
       HomeModel model = homeModelFromJson(response.body);
-      debugPrint('HOme Response data ==>$model');
 
-      debugPrint('HOme Response data ==>${response.body}');
+      // debugPrint('HOme Response data ==>${response.body}');
 
       if (model.success) {
         var searchItemModel = HomeItemModel(
